@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: aibbp687v-nodejs-gitops
+  description: This is GitOps manifest for aibbp687v-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=aibbp687v-nodejs
+    backstage.io/kubernetes-id: aibbp687v-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: aibbp687v-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:aibbp687v-nodejs
